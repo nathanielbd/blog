@@ -1,0 +1,38 @@
+# Site settings
+title: "nathanielbd"
+subtitle: "An autodidact's blog"
+description: "A minimal blog template, build with Jekyll."
+url: "http://nathanielbd.github.io/blog"
+author:
+  name: "Nathaniel Budijono"
+  email: "nathanielbd@gmail.com"
+
+# Build settings
+baseurl: / # Change this to your relative path (ex: /blog/), or leave just a /
+markdown: kramdown
+source: .
+destination: ./_site
+permalink: /:title
+paginate: 8
+paginate_path: /page:num/
+
+# Default values
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Plugins
+gems:
+  - jekyll-paginate
+
+# Custom variables
+version: "1.1.0"
+
+# Options
+custom_header: true
+custom_nav_footer: true
+reverse: false
