@@ -8,13 +8,13 @@ This tutorial will walk you through how to get started with React Native as soon
 
 There are a couple options to choose from if you want to get started quickly.
 
-#Snack
+## Snack
 
 Snack is the easiest way to quickly get started with React Native. It only requires a browser and an internet connection. You can access it at [snack.expo.io](snack.expo.io). 
 
 I've used online code editors such as CodeSandbox before. Snack seems to be one of the better ones as you can save projects to an easy-to-remember url, import github repositories, and test the app all within your browser. Like any online code editors, however, it has its pitfalls. At the very least, Snack is a great quick testing environment.
 
-#Expo CLI
+## Expo CLI
 
 The command line (also called the 'terminal') is a program the accepts input from the user not from buttons and menus (graphical interfaces) but as text commands. There are other programs that can be run from inside the command line called command line interfaces (CLIs). On Windows, you can check out the terminal by pressing the Windows key and typing 'cmd.' On Ubuntu, press the Super key and type 'terminal.' On a Mac, type Command-Spacebar and search 'terminal.'
 
