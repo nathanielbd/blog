@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Let's write React Native: Getting started
-categories: walkthrough
 ---
 
 React Native is a mobile application framework. It is open-source and allows you to develop web, Android, and iOS applications by writing code that is essentially React Javascript.
