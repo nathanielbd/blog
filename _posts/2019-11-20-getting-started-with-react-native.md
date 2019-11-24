@@ -22,4 +22,4 @@ The company that created Snack also has an easy CLI that does not require Androi
 
 You now have Node on your computer! The last thing you need to do get the Expo CLI is run ``npm install -g expo-cli``.
 
-For the next walkthough, you'll need to have a blank project. If you chose Snack, you'll start with blank project. It isn't much harder as you simply run ``expo init``.
+For the next walkthough, you'll need to have a blank project. If you chose Snack, you'll start with blank project. For the Expo CLI, it isn't much harder as you simply run ``expo init``.
