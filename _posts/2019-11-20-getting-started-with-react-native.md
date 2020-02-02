@@ -10,7 +10,7 @@ There are a couple options to choose from if you want to get started quickly.
 
 ## Snack
 
-Snack is the easiest way to quickly get started with React Native. It only requires a browser and an internet connection. You can access it at [snack.expo.io](snack.expo.io). 
+Snack is the easiest way to quickly get started with React Native. It only requires a browser and an internet connection. You can access it at [https://snack.expo.io](https://snack.expo.io). 
 
 I've used online code editors such as CodeSandbox before. Snack seems to be one of the better ones as you can save projects to an easy-to-remember url, import github repositories, and test the app all within your browser. Like any online code editors, however, it has its pitfalls. At the very least, Snack is a great quick testing environment.
 
@@ -23,3 +23,5 @@ The company that created Snack also has an easy CLI that does not require Androi
 You now have Node on your computer! The last thing you need to do get the Expo CLI is run ``npm install -g expo-cli``.
 
 For the next walkthough, you'll need to have a blank project. If you chose Snack, you'll start with blank project. For the Expo CLI, it isn't much harder as you simply run ``expo init``.
+
+After that, you can run ``expo start`` to test the app in your browser or phone.
