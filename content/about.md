@@ -11,4 +11,4 @@ Learning things is my ultimate pursuit. I believe in open educational resources.
 
 When I'm not learning, I can often be found board gaming, video gaming, or watching something funny.
 
-Feel free to contact me through [email](mailto:nathanielbd@gmail.com) or [submit a pull request](https://github.com/nathanielbd/nathanielbd.github.io/pulls) if you think I wrote something inaccurate.
+Feel free to contact me through [email](mailto:nathanielbd@gmail.com) or [submit a pull request](https://github.com/nathanielbd/blog/pulls) if you think I wrote something inaccurate.
