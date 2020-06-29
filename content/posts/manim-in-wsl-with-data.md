@@ -22,7 +22,7 @@ WSL requires an X server to run GUI applications. The one I use and love is [Mob
 
 | ![MobaXTerm](https://blog.mobatek.net/img/screenshots/mobaxterm-local-terminal.png) |
 |:--:|
-| Don't worry, MobaXTerm has dark mode and full screen mode |
+| Don't worry, MobaXTerm has dark mode, full screen mode, and nice fonts |
 
 # How to install Manim on WSL
 
@@ -120,7 +120,7 @@ self.play(Write(dots), run_time=1)
 
 Manim has [really neat functions](https://github.com/3b1b/manim/blob/a529a59abf1f6af02e664dbad1c8474f3a25a61e/manimlib/scene/graph_scene.py#L715) for [plotting tangent lines](https://github.com/3b1b/manim/blob/a529a59abf1f6af02e664dbad1c8474f3a25a61e/manimlib/scene/graph_scene.py#L988) to [visualize derivaties](https://github.com/3b1b/manim/blob/839fb4ff582103bd717b9d7937c926ef0390fb01/from_3b1b/old/eoc/chapter9.py#L1080), but they only work for graphs created from `GraphScene.get_graph`. In other words, there is no official support for tangent line plotting for our data points.
 
-My inefficient hack around this was to enumerate the graphs of the instantaneous slopes using the slope intercept form of the [secant line for numerical differentiation](https://en.wikipedia.org/wiki/Numerical_differentiation#Finite_differences).
+My hack around this was to enumerate the graphs of the instantaneous slopes using the slope intercept form of the [secant line for numerical differentiation](https://en.wikipedia.org/wiki/Numerical_differentiation#Finite_differences).
 
 ```python
 derivatives = [self.get_graph(
@@ -136,7 +136,18 @@ for derivative, next_derivative in zip(derivatives, derivatives[1::]):
 
 ![A gif from my video](/tangent.gif)
 
-# Documentation I wish I had
+## Area under the data point curve
+
+Similarly to the tangent lines, area under the curve [is possible](https://github.com/3b1b/manim/blob/a529a59abf1f6af02e664dbad1c8474f3a25a61e/manimlib/scene/graph_scene.py#L413), but [only for native graphs](https://github.com/3b1b/manim/blob/a529a59abf1f6af02e664dbad1c8474f3a25a61e/from_3b1b/old/eoc/chapter1.py#L1990).
+
+My hack around this was to just draw a bunch of lines from the x-axis to the points.
+
+```python
+auc = VGroup(*[Line(self.coords_to_point(coord['x'], 0), self.coords_to_point(coord['x'], coord['y'])).set_stroke(width=8) for coord in coords])
+self.play(Write(auc))
+```
+
+# Some Documentation I wish I had
 
 ## How Points work
 
@@ -173,3 +184,7 @@ class TikzMobject(TextMobject):
 I found looking through the source code and [how Grant himself used Manim](https://github.com/3b1b/manim/tree/a529a59abf1f6af02e664dbad1c8474f3a25a61e/from_3b1b) to be a decent alternative to documentation. 
 
 I'm excited because there are [ongoing efforts to make Manim web-compatible](https://github.com/eulertour/eulerv2). The combination of this and better documentation should make for more amazing math videos and other educational visualizations.
+
+My entry for BJC 2020 wasn't the best, but it gave me an excuse to learn Manim and video editing with [DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve/)! The effort to production value ratio is really high for both of these tools.
+
+Now I need an excuse to evaluate some presentation/slidedeck tools for this ratio. Would the winner be [Beamer](https://www.overleaf.com/learn/latex/Beamer), [reveal.js](https://revealjs.com/), or [impress.js](https://impress.js.org/)?
