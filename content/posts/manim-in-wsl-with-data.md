@@ -20,9 +20,9 @@ WSL stands for "Windows Subsystem for Linux." It allows developers to run a Linu
 
 WSL requires an X server to run GUI applications. The one I use and love is [MobaXterm](https://mobaxterm.mobatek.net/). It runs smoothly, has tabs for multiple terminals, pretty colors, and even works over SSH. Personally, I'm really happy with my VSCodium/MobaXterm/Vim setup. After switching from Cygwin, PuTTY, and [my university's online Linux desktop](https://vole.cse.umn.edu/), I've never looked back.
 
-| ![MobaXTerm](https://blog.mobatek.net/img/screenshots/mobaxterm-local-terminal.png) |
+| ![MobaXTerm](/mobaxterm.png) |
 |:--:|
-| Don't worry, MobaXTerm has dark mode, full screen mode, and nice fonts |
+| MobaXTerm with X server displaying a pdf using [Zathura](https://pwmt.org/projects/zathura/) |
 
 # How to install Manim on WSL
 
@@ -147,6 +147,8 @@ auc = VGroup(*[Line(self.coords_to_point(coord['x'], 0), self.coords_to_point(co
 self.play(Write(auc))
 ```
 
+![Another gif from my video](/auc.gif)
+
 # Some Documentation I wish I had
 
 ## How Points work
@@ -177,6 +179,29 @@ class TikzMobject(TextMobject):
 		"fill_opacity":	  0,
 		"stroke_opacity": 1
 	}
+```
+
+![A screenshot from my video](/tikz.png)
+
+The above figure can be animated with the following code:
+
+```python
+fig = TikzMobject(
+	r"""
+            \begin{tikzpicture}[
+                circlenode/.style={circle, draw},
+                rectanglenode/.style={rectangle, draw, minimum width=2em},
+                wheelnode/.style={circle, draw, minimum size=1.5em}
+            ]
+                \node[circlenode] at (-0.25,0) {};
+                \draw (-0.25,0)--(0,-4);
+                \node[rectanglenode] at (0,-4) {};
+                \node[wheelnode] at (0.5,-4) {};
+                \node[wheelnode] at (-0.5, -4) {};
+            \end{tikzpicture}
+	"""
+)
+self.play(Write(fig))
 ```
 
 # Closing thoughts
