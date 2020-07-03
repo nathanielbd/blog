@@ -26,7 +26,7 @@ WSL requires an X server to run GUI applications. The one I use and love is [Mob
 
 # How to install Manim on WSL
 
-Manim uses [MiKTeX](https://miktex.org) to handle $\\LaTex$. I followed the intructions [here](https://miktex.org/howto/install-miktex-unx) to install.
+Manim uses [MiKTeX](https://miktex.org) to handle \\(\LaTeX\\). I followed the intructions [here](https://miktex.org/howto/install-miktex-unx) to install.
 
 Next, install dependencies.
 
@@ -161,7 +161,7 @@ Internally, these points are represented as an `[x, y, z]` coordinate array. So 
 
 ## tikz Support
 
-Manim renders `TextMobjects` in $\\LaTeX$ by using `manim/manimlib/tex_template.tex`. Notably, the preamble of this document doesn't include `tikz`, so if you want to use `tikz`, you should add
+Manim renders `TextMobjects` in \\(\LaTeX\\) by using `manim/manimlib/tex_template.tex`. Notably, the preamble of this document doesn't include `tikz`, so if you want to use `tikz`, you should add
 
 ```
 \usepackage{tikz}
