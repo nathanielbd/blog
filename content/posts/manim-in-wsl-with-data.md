@@ -118,7 +118,7 @@ self.play(Write(dots), run_time=1)
 
 ## Tangent lines to data points
 
-Manim has [really neat functions](https://github.com/3b1b/manim/blob/a529a59abf1f6af02e664dbad1c8474f3a25a61e/manimlib/scene/graph_scene.py#L715) for [plotting tangent lines](https://github.com/3b1b/manim/blob/a529a59abf1f6af02e664dbad1c8474f3a25a61e/manimlib/scene/graph_scene.py#L988) to [visualize derivaties](https://github.com/3b1b/manim/blob/839fb4ff582103bd717b9d7937c926ef0390fb01/from_3b1b/old/eoc/chapter9.py#L1080), but they only work for graphs created from `GraphScene.get_graph`. In other words, there is no official support for tangent line plotting for our data points.
+Manim has [really neat functions](https://github.com/3b1b/manim/blob/a529a59abf1f6af02e664dbad1c8474f3a25a61e/manimlib/scene/graph_scene.py#L715) for [plotting tangent lines](https://github.com/3b1b/manim/blob/a529a59abf1f6af02e664dbad1c8474f3a25a61e/manimlib/scene/graph_scene.py#L988) to [visualize derivatives](https://github.com/3b1b/manim/blob/839fb4ff582103bd717b9d7937c926ef0390fb01/from_3b1b/old/eoc/chapter9.py#L1080), but they only work for graphs created from `GraphScene.get_graph`. In other words, there is no official support for tangent line plotting for our data points.
 
 My hack around this was to enumerate the graphs of the instantaneous slopes using the slope intercept form of the [secant line for numerical differentiation](https://en.wikipedia.org/wiki/Numerical_differentiation#Finite_differences).
 

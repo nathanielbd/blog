@@ -27,7 +27,7 @@ GitHub Pages?
 
 Hugo?
 - [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) is really easy to use to write each page of your site. It's much easier than HTML.
-- It works well it GitHub Pages
+- It works well with GitHub Pages
 
 This site was generated with Hugo and hosted on GitHub Pages.
 
@@ -56,7 +56,7 @@ This site was generated with Hugo and hosted on GitHub Pages.
 - You should follow the example site for how to write your `config.toml` file
 - Typing the command `hugo new <title>.md` creates a new page `<title>.md` in the `content` folder. It will autogenerate a Markdown front matter for you, including the date, title, and other details of the page. 
 - Follow the [Markdown cheat sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) to write your page below the front matter. My posts normally only consist of headers, code blocks, tables, images, links, and text.
-- Make sure you like how your page looks. To see what it will look like before you make the site live, run `hugo serve` or `hugo server` to run the webpage locally. Type 'localhost:5000' in the address bar to see your working version.
+- Make sure you like how your page looks. To see what it will look like before you make the site live, run `hugo serve` or `hugo server` to run the webpage locally. Type 'localhost:1313' in the address bar to see your working version.
 
 # Deploying to GitHub Pages
 
@@ -65,4 +65,4 @@ Use [this guide](https://gohugo.io/hosting-and-deployment/hosting-on-github/) as
 - If you are using Linux, Mac, or WSL, you can start [here](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
 - If you are using Windows, instead of running `./deploy.sh` in the final step, you should run `bash -c './deploy.sh'` instead
 
-This will host your site at `<your-github-username>.github.io`. If you'd like yourself to stand out even more, you could purchase a domain name and [use that name with GitHub Pagse](https://docs.github.com/en/github/working-with-github-pages/about-custom-domains-and-github-pages)..
+This will host your site at `<your-github-username>.github.io`. If you'd like yourself to stand out even more, you could purchase a domain name and [use that name with GitHub Pages](https://docs.github.com/en/github/working-with-github-pages/about-custom-domains-and-github-pages).
