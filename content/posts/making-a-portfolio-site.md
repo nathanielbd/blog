@@ -8,6 +8,21 @@ tags:
 
 *This content was created as part of an educational workshop for [SASE Labs UMN](https://saseumn.org), of which I served as director from 2020-2021.*
 
+For readers of this blog:
+
+I use [KaTeX](https://katex.org/) for math typesetting. When I embed GitHub gists, I add [this CSS](https://gist.github.com/adimancv/eb2f4b46d3c95e6b8fe4dd52375236b2) (as a Hugo partial). When the GitHub gist is a `.csv` file I add the following CSS:
+
+```css
+.gist .markdown-body .csv-data th, .gist .markdown-body .csv-data td, .gist .markdown-body .csv-data .blob-num {background: #000; background-color: #000;}
+.gist .blob-interaction-bar .octicon-search > path {fill: #fff}
+.gist .blob-interaction-bar > input {background: #000}
+.gist .blob-interaction-bar {background: #000}
+```
+
+Due to GitHub's JavaScript messing with the CSS, this must be added after the embedding. I accomplish this by using a raw HTML shortcode: `{{.Inner}}`.
+
+---
+
 # Motivation
 
 Having a personal website makes you stand out in the sea of other online applications. It's a
