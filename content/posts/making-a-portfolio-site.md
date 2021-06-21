@@ -19,6 +19,8 @@ I use [KaTeX](https://katex.org/) for math typesetting. When I embed GitHub gist
 .gist .blob-interaction-bar {background: #000}
 ```
 
+This ensures that the gists are in dark theme.
+
 Due to GitHub's JavaScript messing with the CSS, this must be added after the embedding. I accomplish this by using a raw HTML shortcode: `{{.Inner}}`.
 
 ---
