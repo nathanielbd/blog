@@ -1,7 +1,6 @@
 ---
 title: "Celebrating Aleksandr Lyapunov"
 date: 2021-06-06T16:04:16-05:00
-draft: true
 tags:
   - Manim
   - dynamical systems
@@ -17,25 +16,11 @@ I recently participated in the first annual [Manim](https://www.manim.community/
 
 Consider the system
 
-<div class='math'>
-$$
-\begin{align}
-	\frac{dx}{dt} &= y-x^3 \\\\\\\\
-	\frac{dy}{dt} &= -x-y^3.
-\end{align}
-$$
-</div>
-
 $$
 \begin{aligned}
-	a=&b+c \newline
-	=&e+f
+	\frac{dx}{dt} &= y-x^3 \newline
+	\frac{dy}{dt} &= -x-y^3.
 \end{aligned}
-$$
-
-$$
-foo \newline
-bar
 $$
 
 | ![Our dynamical system](/DSImage.png) |
@@ -50,13 +35,15 @@ However, Lyapunov showed that finding a Lyapunov function \\(V\\) which is local
 |:--:|
 | The chosen Lyapunov function |
 
-$$\begin{align*}
-	\frac{dV}{dt} &= \frac{dV}{dx} \frac{dx}{dt} + \frac{dV}{dy} \frac{dy}{dt} \\
-	&= 2x(y-x^3) + 2y(-x-y^3) \\
-	&= 2xy -2x^4 - 2yx -2y^4 \\
+$$
+\begin{aligned}
+	\frac{dV}{dt} &= \frac{dV}{dx} \frac{dx}{dt} + \frac{dV}{dy} \frac{dy}{dt} \newline
+	&= 2x(y-x^3) + 2y(-x-y^3) \newline
+	&= 2xy -2x^4 - 2yx -2y^4 \newline
 	&= -2x^4 - 2y^4
-\end{align*}$$
+\end{aligned}
+$$
 
-$V$ is nonnegative and $\frac{dV}{dt}$ is nonpositive, so it truly is a Lyapunov function. Its existence implies that the system is aysmptototically stable; trajectories all eventually converge to the origin. 
+\\(V\\) is nonnegative and \\(\frac{dV}{dt}\\) is nonpositive, so it truly is a Lyapunov function. Its existence implies that the system is aysmptototically stable; trajectories all eventually converge to the origin. 
 
-Outside of this toy example, Lyapunov functions are used in the engineering of nonlinear control systems.
+Outside of this toy example, Lyapunov functions are used in the engineering of nonlinear control systems. Their analogue in [control-Lyapunov functions](https://en.wikipedia.org/wiki/Control-Lyapunov_function) has been used in [robotics for path planning around obstacles](https://arc.aiaa.org/doi/10.2514/3.21375).
