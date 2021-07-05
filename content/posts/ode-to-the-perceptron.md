@@ -22,7 +22,7 @@ define a function \\(f\\):
 
 $$f(x) = \begin{cases}1 & \text{if } w \cdot x + b > 0 \\\\ 0 & \text{otherwise} \end{cases}$$
 
-The task of predicting a class \\(d\\) of some row \\(x\\) can be solved via an iteratively-improving algorithm thought to be 'trained' with the data in \\(X\\). The traing algorithm pseudocode is:
+The task of predicting a class \\(d\\) of some row \\(x\\) can be solved via an iteratively-improving algorithm thought to be 'trained' with the data in \\(X\\). The training algorithm pseudocode is:
 
 ```
 initialize w
