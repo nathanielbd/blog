@@ -10,7 +10,7 @@ tags:
 |:--:|
 | Happy 164th birthday, Aleksandr Lyapunov! |
 
-I recently participated in the first annual [Manim](https://www.manim.community/) math animation engine hackathon! The theme was aniversaries, so I created the above animation to celebrate the 164t anniversary of mathematician Aleksandr Lyapunov's birth. This extended some ideas I presented from [Steven Strogatz's nonlinear dynamics textbook](http://www.stevenstrogatz.com/books/nonlinear-dynamics-and-chaos-with-applications-to-physics-biology-chemistry-and-engineering) at the University of Minnesota's [math directed reading program](https://www-users.math.umn.edu/~mahrud/drp/) symposium.
+I recently participated in the first annual [Manim](https://www.manim.community/) math animation engine hackathon! The theme was aniversaries, so I created the above animation to celebrate the 164th anniversary of mathematician Aleksandr Lyapunov's birth. This extended some ideas I presented from [Steven Strogatz's nonlinear dynamics textbook](http://www.stevenstrogatz.com/books/nonlinear-dynamics-and-chaos-with-applications-to-physics-biology-chemistry-and-engineering) at the University of Minnesota's [math directed reading program](https://www-users.math.umn.edu/~mahrud/drp/) symposium.
 
 # The math
 
@@ -45,5 +45,7 @@ $$
 $$
 
 \\(V\\) is nonnegative and \\(\frac{dV}{dt}\\) is nonpositive, so it truly is a Lyapunov function. Its existence implies that the system is aysmptototically stable; trajectories all eventually converge to the origin. 
+
+So the key insight that Lyapunov found was that there doesn't need to be a real energy function, nor does a system have to be physical; all you need is a Lyapunov function that satisfies a few properties to determine its stability.
 
 Outside of this toy example, Lyapunov functions are used in the engineering of nonlinear control systems. Their analogue in [control-Lyapunov functions](https://en.wikipedia.org/wiki/Control-Lyapunov_function) has been used in [robotics for path planning around obstacles](https://arc.aiaa.org/doi/10.2514/3.21375).

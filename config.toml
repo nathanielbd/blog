@@ -89,3 +89,8 @@ googleAnalytics = "UA-168359675-1"
     name = "About"
     url = "about"
     weight = 20
+
+  [[menu.main]]
+    name = "Projects"
+    url = "projects"
+    weight = 25
