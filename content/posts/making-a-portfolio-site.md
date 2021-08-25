@@ -28,7 +28,7 @@ Due to GitHub's JavaScript messing with the CSS, this must be added after the em
 # Motivation
 
 Having a personal website makes you stand out in the sea of other online applications. It's a
-way to introduce yourself and control your image to employers online. It's a convient way to
+way to introduce yourself and control your image to employers online. It's a convenient way to
 host a blog, your résumé, and a portfolio. 
 
 # How

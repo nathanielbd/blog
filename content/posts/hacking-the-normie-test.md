@@ -28,27 +28,27 @@ Questions 21-34 are the 'actual' or 'normie' questions which supposedly determin
 
 Questions 35-41 are 'statistical.' They ask the quiz taker their height, BMI, climate, among other things for reference.
 
-The perspective questions have 5 answer options: Strongly Yes, Yes, Neutral, No, and Strongly No. The [changelog](http://dulm.blue/normie/changelog.gimp) shows that the creator of the test, Do You Like Memes? (DULM), calls these 5-option questions 'dynamic questions.' The normie questions have some Yes-No questions and some dynamic questions. 
+The perspective questions have 5 answer options: Strongly Yes, Yes, Neutral, No, and Strongly No. The [change log](http://dulm.blue/normie/changelog.gimp) shows that the creator of the test, Do You Like Memes? (DULM), calls these 5-option questions 'dynamic questions.' The normie questions have some Yes-No questions and some dynamic questions. 
 
-A few assumptions guided my investigation. Each answer option probably has a positive or negative score which affects the X and Y-coordinates. Then the XY-coordinates are just the sums of the scores of the quiz taker's answers. DULM writes the following subtitle for the statistical questions:
+A few assumptions guided my investigation. Each answer option probably has a positive or negative score which affects the X- and Y-coordinates. Then the coordinates are just the sums of the scores of the quiz taker's answers. DULM writes the following subtitle for the statistical questions:
 
 >Enter some numbers to see how normal you are.
 >**WTF!!! Is this a datamine?**
 >The next six questions will make your test results more accurate, as these statistics can determine the likelihood of being normal. 
 
-From this, it sounds like DULM looks at the distribution of personality classes for different answers and somehow takes that into account for the final result. I assume they add a 'correction term' to the XY-coordinates based on that distribution. This assumption is necessary since the [sparse statistical data](https://raw.githubusercontent.com/nathanielbd/normie-neural-networks/master/stats.json) that DULM makes public does not include any XY means or covariances.
+From this, it sounds like DULM looks at the distribution of personality classes for different answers and somehow takes that into account for the final result. I assume they add a 'correction term' to the coordinates based on that distribution. This assumption is necessary since the [sparse statistical data](https://raw.githubusercontent.com/nathanielbd/normie-neural-networks/master/stats.json) that DULM makes public does not include any X or Y means or covariances.
 
 ## Web scraping
 
-Due to the last assumption, the first round of web scraping answered the perspective and normie questions randomly while leaving the statistical questions in their default options (with the exception of answering male/female/other) and recorded the resulting XY coordinates. In order to solve for the weights, this first round needed to collect at least 146 samples (25 dynamic questions, 9 Yes-No questions, and the male/female/other question) for the system not to be [underdetermined](https://en.wikipedia.org/wiki/Underdetermined_system).
+Due to the last assumption, the first round of web scraping answered the perspective and normie questions randomly while leaving the statistical questions in their default options (except answering male/female/other) and recorded the resulting X- and Y-coordinates. In order to solve for the weights, this first round needed to collect at least 146 samples (25 dynamic questions, 9 Yes-No questions, and the male/female/other question) for the system not to be [underdetermined](https://en.wikipedia.org/wiki/Underdetermined_system).
 
 Also due to the last assumption, the second round of web scraping required a sample for each of the 14400 combinations (2 3-option questions, 3 4-option questions, and 2 5-option questions) of answers to the statistical quesitons. This time, I also recorded the resulting personality class for each sample.
 
-During my investigation, DULM actually added their own captcha robot test, which made web scraping a little more difficult.
+During my investigation, DULM actually added their own CAPTCHA robot test, which made web scraping a little more difficult.
 
 | ![](/captcha.png) |
 |:--:|
-| Shoutout to fellow Golden Gopher [Dr. Nick Hooper](https://www-users.cs.umn.edu/~hoppernj/) for co-creating CAPTCHA |
+| Shout out to fellow Golden Gopher [Dr. Nick Hooper](https://www-users.cs.umn.edu/~hoppernj/) for co-creating CAPTCHA |
 
 In the end, I had my [scraping script](https://github.com/nathanielbd/normie-neural-networks/blob/master/scrape.py) prompt me to answer the CAPTCHA and quit whenever the CAPTCHA expired. It would write to the same CSV file each time and would know which combination it last wrote.
 
@@ -58,7 +58,7 @@ It was through this web scraping that I found that the X coordinate is always in
 
 ## Findings
 
-### XY coordinates
+### X- and Y- coordinates
 
 Figuring out the weights toward the X and Y coordinates for each question option requires solving the system
 
@@ -79,7 +79,7 @@ After rounding to the nearest 0.5 for the X weights and to the nearest 0.25 for 
 
 #### [Normie Neural Networks](https://github.com/nathanielbd/normie-neural-networks)
 
-Let's try doing the same thing, but with a single layer neural network. Just for fun.
+Let's try doing the same thing, but with a single layer neural network. Just for fun. And also alliteration.
 
 ```python
 class SingleLayerNeuralNetwork(nn.Module):

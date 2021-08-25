@@ -27,7 +27,7 @@ This was my first exploit, so the only tool at my disposal was the trusty `F12`,
 
 Obfuscation is the process of deliberately making code hard to read by humans. In the case of a JavaScript app like Protobowl, it makes the scripts sent to the user for the web-page smaller and quicker to download. This meant that while they will be harder to find, if there is a vulnerability in `app.js`, I would be able to execute it on my device (the client). 
 
-A common patten in obfuscation is renaming variables from their human-readable names to typically 1-2 letter names. However, you cannot change strings without changing the behavior of the program. Therefore, any string found in the source code will be found verbatim in the obfuscated code I find on my device. The tricky part would be finding a string that would lead me directly to a vulnerability...
+A common pattern in obfuscation is renaming variables from their human-readable names to typically 1-2 letter names. However, you cannot change strings without changing the behavior of the program. Therefore, any string found in the source code will be found verbatim in the obfuscated code I find on my device. The tricky part would be finding a string that would lead me directly to a vulnerability...
 
 ## CSS Selector Strings and the DOM
 
@@ -97,7 +97,7 @@ The first code I ever read was obfuscated and the first code I ever wrote was a 
 
 # morsecode.me
 
-This is a weekend project by [Burak Kanber](https://twitter.com/bkanber) that hosts morse code chat rooms. In my attempt to create a tool to allow me to chat without knowing any morse code, I got a healthy taste of JavaScript higher-order functions, concurrency, and `Promise`s.
+This is a weekend project by [Burak Kanber](https://twitter.com/bkanber) that hosts Morse code chat rooms. In my attempt to create a tool to allow me to chat without knowing any Morse code, I got a healthy taste of JavaScript higher-order functions, concurrency, and `Promise`s.
 
 | ![](/zhao.png) |
 |:---:|
@@ -105,7 +105,7 @@ This is a weekend project by [Burak Kanber](https://twitter.com/bkanber) that ho
 
 ## The idea
 
-Instead of using the button to emit the dits and dahs of morse code, let's create a tool that will translate your keypresses into the appropriate dits and dahs.
+Instead of using the button to emit the 'dits' and 'dahs' of Morse code, let's create a tool that will translate your keypresses into the appropriate dits and dahs.
 
 ### Signal duration
 
@@ -194,7 +194,7 @@ and even a [ternary](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Ref
 
 | ![](/morse.gif) |
 |:---:|
-| I still don't fully know morse code |
+| I still don't fully know Morse code |
 
 # skribbl.io
 
@@ -202,7 +202,7 @@ It's a popular game similar to Pictionary, except you know how many letters the 
 
 ## The idea
 
-The idea is essentially what didn't end up happening with the morse code exploit; add possible words into a queue and have a `setInterval` guess from the queue as fast as possible (without getting banned for spam).
+The idea is essentially what didn't end up happening with the Morse code exploit; add possible words into a queue and have a `setInterval` guess from the queue as fast as possible (without getting banned for spam).
 
 *Aside*: Looking back, the familiarity with this pattern of fetching data to store for future use probably helped me learn React very quickly. Have you ever written a `componentDidMount` before?
 
@@ -212,9 +212,9 @@ The idea is somewhat simple, but a complicated part is trying to only guess word
 
 | ![](/yoda.png) |
 |:---:|
-| *Ackchually* he's called 'The Child' |
+| *Ackchually* he's called ~~'The Child'~~ Grogu |
 
-For what is revealed here, we want to guess 'soda,' 'yoda,' or any four letter words containing a 'd' in the third spot. This turns out to be a natural place to use [regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) since they can match patterns in strings.
+For what is revealed here, we want to guess 'soda,' 'Yoda,' or any four letter words containing a 'd' in the third spot. This turns out to be a natural place to use [regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) since they can match patterns in strings.
 
 ```js
 var hint = $("#currentWord")[0].textContent; 

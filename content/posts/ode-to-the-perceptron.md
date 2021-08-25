@@ -22,7 +22,7 @@ define a function \\(f\\):
 
 $$f(x) = \begin{cases}1 & \text{if } w \cdot x + b > 0 \\\\ 0 & \text{otherwise} \end{cases}$$
 
-The task of predicting a class \\(d\\) of some row \\(x\\) can be solved via an iteratively-improving algorithm thought to be 'trained' with the data in \\(X\\). The training algorithm pseudocode is:
+The task of predicting a class \\(d\\) of some row \\(x\\) can be solved via an iteratively improving algorithm thought to be 'trained' with the data in \\(X\\). The training algorithm pseudocode is:
 
 ```
 initialize w
@@ -59,7 +59,7 @@ The training algorithm stops when \\(w\\) ceases to change by a certain amount w
 
 More importantly, this is achieved *despite* the random initialization of \\(w\\). The training algorithm can correct mistakes during training by the vector addition
 
-$$w := w + r(d-y)x$$
+$$w := w + r(d-y)x,$$
 
 which rotates the decision boundary in the appropriate direction, as seen in the animation. Deep learning makes a more powerful generalization to convergence and self-correction: loss functions. While linear decision boundaries can measure their performance by computing the dot product and therefore the [cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity) of its norm and positive-class data points, we can define loss functions which establishes how well the neural network is approximating the desired function. Since these loss functions are differentiable with respect to our parameters, we can iteratively subtract multiples of the gradient for self-correction instead of vector addition like the perceptron does. Actually, there are a rich class of optimization algorithms based on the gradient and Hessian of the loss function.
 

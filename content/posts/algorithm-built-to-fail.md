@@ -18,9 +18,15 @@ There's no question that elliptic curves are incredibly important to math and cr
 |:--:|
 | ECC spotted in Wikipedia's security certificate |
 
-It was the key to Andrew Wiles's [famous proof](https://doi.org/10.2307/2118559) of [Fermat's Last Theorem](https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem). But its most creative use, in my opinion, was its application in my favorite algorithm. Strangely enough, it's an algorithm literally built to fail. My goal is that this blog post reads like a combination of an engaging textbook and a mystery novel. By the end, I hope to give you the feeling that you could have invented this algorithm yourself by piecing together the title of this post and what you've learned.
+It was the key to Andrew Wiles's [famous proof](https://doi.org/10.2307/2118559) of [Fermat's Last Theorem](https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem). It was even used to [fill a void in one of M. C. Escher's artworks](https://im-possible.info/english/articles/escher_printgallery/). 
 
-By the way, the this algorithm is a factoring algorithm. The goal is, given an integer, find an equivalent expression that's a product of other integers.
+| ![](/escher.png) |
+|:--:|
+| *Print gallery* by M. C. Escher and a 'filled-in' version exhibiting the [Droste effect](https://en.wikipedia.org/wiki/Droste_effect) |
+
+But its most creative use, in my opinion, was its application in my favorite algorithm. Strangely enough, it's an algorithm literally built to fail. My goal is that this blog post reads like a combination of an engaging textbook and a mystery novel. By the end, I hope to give you the feeling that you could have invented this algorithm yourself by piecing together the title of this post and what you've learned.
+
+By the way, the algorithm is a factoring algorithm. The goal is, given an integer, find an equivalent expression that's a product of other integers.
 
 | ![](/FactorBois.gif) |
 |:--:|
@@ -60,7 +66,7 @@ In the case of elliptic curves, the elements of the set of the points and the op
 
 ---
 
-In the case of adding a point to its inverse, there's no third intersection between the line and the curve. This leads us to define the non-existant point 'at infinity' to be the identity element (denoted \\(\mathcal{O}\\)), since its sum with any other point can be defined as simply the other point, in addition to being the sum of inverses.
+In the case of adding a point to its inverse, there's no third intersection between the line and the curve. This leads us to define the nonexistent point 'at infinity' to be the identity element (denoted \\(\mathcal{O}\\)), since its sum with any other point can be defined as simply the other point, in addition to being the sum of inverses.
 
 $$P + -P = -P + P = \mathcal{O}$$
 
@@ -147,6 +153,8 @@ The other key detail besides the group structure of elliptic curves to consider 
 
 Modular arithmetic refers to the system of operating on the integers where numbers 'wrap around' when reaching a critical value called the modulus. In modular arithmetic, we may take expressions 'modulo' or 'mod' the modulus, meaning that we take the remainder after dividing by the modulus.
 
+More formally, if we say that \\(a\\) divides \\(b\\), then there exists another integer \\(c\\) where \\(ac = b\\). Then in modular arithmetic, we say that \\(a \equiv b \mod n\\) ('\\(a\\) is congruent to \\(b\\) mod \\(n\\)') if \\(n\\) divides \\(b-a\\).
+
 For us to continue to be able to add points elliptic curves under modular arithmetic, we need to see the modular equivalents to operations in the procedure:
 
 $$
@@ -172,7 +180,7 @@ Addition, subtraction, multiplication, and division.
 
 Multiplication behaves well under modular arithmetic thanks to the useful property
 
-$$(a \cdot b) \mod n = (a \mod n)(b \mod n) \mod n.$$
+$$(a \cdot b) \mod n \equiv (a \mod n)(b \mod n) \mod n.$$
 
 Division is slightly more complicated. But modular division is slightly more complicated. It requires finding a number called the modular multiplicative inverse. In regular arithmetic, if we wanted to divide by 5, we could just multiply by one fifth---its reciprocal, the number to multiply to get 1. Here in modular arithmetic land, we're going to use the extended Euclidean algorithm to find the modular multiplicative inverse and make modular division possible.
 
@@ -240,8 +248,8 @@ $$
 au + bv &= \gcd(a, b) \newline
 au + bv &= 1 \newline
 au - 1 &= -bv \newline
-au - 1 &= 0 \mod b \newline
-au &= 1 \mod b.
+au - 1 &\equiv 0 \mod b \newline
+au &\equiv 1 \mod b.
 \end{aligned}
 $$
 
@@ -272,7 +280,7 @@ Consider the title of this post as your final hint.
 ---
 ---
 
-The key is to consider the scenario where \\(\gcd(a, b)\\) is not 1. That would mean the extended Euclidan algorithm fails to compute a modular multiplicative inverse. We fail to divide when calculating the slope and it is undefined.
+The key is to consider the scenario where \\(\gcd(a, b)\\) is not 1. That would mean the extended Euclidean algorithm fails to compute a modular multiplicative inverse. We fail to divide when calculating the slope and it is undefined.
 
 But if \\(\gcd(a, b) = c > 1\\), then \\(c\\) is a number we can use to factor \\(a\\) or \\(b\\), since it divides both!
 
@@ -282,9 +290,20 @@ But if \\(\gcd(a, b) = c > 1\\), then \\(c\\) is a number we can use to factor \
 
 Now our algorithm just needs
 1. a way to generate elliptic curves modulo the number to be factored
-2. a way to quickly add many points
+2. a way to quickly add many points.
 
-We can accomplish both of these by picking the coordinates of a point, defining an elliptic curve such that it contains that point, and adding that point to itself repeatedly\*. If we choose \\(P = (a, b)\\), then pick a random \\(A\\), we have
+We can accomplish both of these by picking the coordinates of a point, defining an elliptic curve such that it contains that point, and adding that point to itself repeatedly (computing its multiples). 
+
+$$
+\begin{aligned}
+  P + P &= 2P \newline
+  2P + P &= 3P \newline
+  \dots \newline
+  (n-1)P + P &= \mathcal{O}
+\end{aligned}
+$$
+
+If we choose \\(P = (a, b)\\), then pick a random \\(A\\), we have
 
 $$
 \begin{aligned}
@@ -293,7 +312,7 @@ $$
 \end{aligned}
 $$
 
-when we evalute the curve at \\(P\\). In order for \\(P\\) to be a solution of the curve, we must have \\(B = b^2 - a^3 - Aa \mod N\\) to satisfy the equation.
+when we evaluate the curve at \\(P\\). In order for \\(P\\) to be a solution of the curve, we must have \\(B = b^2 - a^3 - Aa \mod N\\) to satisfy the equation.
 
 | ![](/ecs.gif) |
 |:--:|
@@ -301,7 +320,7 @@ when we evalute the curve at \\(P\\). In order for \\(P\\) to be a solution of t
 
 ---
 
-*Note: in reality, it is faster to compute \\(n!P\\) in the \\(n\\)th step of the algorithm than to repeatedly add a point ot itself. This is accomplished by the double-and-add algorithm, which I will cover in the sequel post.*
+*Note: in reality, it is faster to compute \\(n!P\\) in the \\(n\\)th step of the algorithm than to repeatedly add a point to itself. This is accomplished by the double-and-add algorithm, which I will cover in the sequel post.*
 
 ---
 
@@ -313,7 +332,33 @@ It's intriguing that the algorithm doesn't just fail, but accomplishes its goal 
 
 I plan to write a follow-up post to this one where I implement the algorithm in Python. Along the way, you can expect to learn about the programming conditions known as exceptions and how they can be used to write what might be the most intuitive implementation of the algorithm. Stay tuned and if you want to look ahead, see [the source code](https://github.com/nathanielbd/HPS-crypto).
 
-# Acknowledgements
+# Anticipated questions
+
+Why do we expect adding a point to itself repeatedly eventually become the point at infinity?
+- When you have a group with finitely many elements like we do with elliptic curves modulo a number, then computing the multiples of an element by repeatedly adding it to itself will generate new points in the group, including the identity element. If you add one more multiple to the identity element, then we will be back where we started. Thus, mathematicians call the set of elements generated by doing this a cyclic subgroup of the original group. We expect this to happen because of the point's inclusion in a cyclic subgroup:
+
+$$H = \\{ \dots \mathcal{O}, P, 2P, \dots \mathcal{O}, \dots \\}$$
+
+Who made this wonderful algorithm?
+- Hendrik Lenstra, a Dutch mathematician. Three of his brothers are also mathematicians, and he actually was the one who [once used ellipctic curves to fill the void in M. C. Escher's *Print Gallery*](https://im-possible.info/english/articles/escher_printgallery/).
+
+| ![](https://tse2.mm.bing.net/th?id=OIP.TzI1bE7iA1tXwlvveHtdOgAAAA&pid=Api) |
+|:--:|
+| "The art of doing mathematics is forgetting about the superfluous information." ---Hendrik Lenstra |
+
+How do we know that finding a factor is likely? From the last note, why is computing the factorial of a number multiples of a point instead of just adding a point to itself many times faster?
+- I didn't want to drag on an already long blog post with talking about finite fields, but the answer requires knowing about them. They are algebraic objects like groups that are defined with prime numbers. Essentially, if we are trying to factor \\(n\\) which has prime factor \\(p\\) using point \\(P\\), then if we look at the elliptic curve over the finite field defined by \\(p\\), \\(mP = \mathcal{O}\\) for some number \\(m\\). Getting a division failure that we want from the elliptic curve \\(\mod n\\) will happen when we compute \\(kP\\) where \\(k\\) is some multiple of \\(m\\). Thus, computing a factorial multiple of \\(P\\) will help us get there quickly. The size of the finite field depends on \\(p\\); so if \\(p\\) is small, then a smaller factorial multiple will get us our desired division failure. Read [this](https://sites.math.washington.edu/~morrow/336_16/2016papers/thomas.pdf) for more details.
+
+Is this algorithm the fastest factoring algorithm? Is this algorithm actually important compared to other factoring algorithms?
+- For general-purpose factoring, Lenstra's algorithm is the third fastest algorithm. However, it is still in active use because how long it takes to factor does not depend on the size of the number to factor, but upon the size of its smallest factor as seen in the previous question. This makes it the fastest algorithm for large numbers which have small factors. So many factoring programs use Lenstra's algorithm to start, then switch to more generally faster algorithms, like the [quadratic](https://en.wikipedia.org/wiki/Quadratic_sieve) or [general number field sieves](https://en.wikipedia.org/wiki/General_number_field_sieve).
+
+Can I ask you a question personally?
+- Yes, please [email me](mailto:nathanielbd@gmail.com) with any questions.
+
+Where is the source code for the animations?
+- You can view the source code [here](https://github.com/nathanielbd/SoME1). Apologies in advance for the messy code.
+
+# Acknowledgments
 
 I learned this from *An Introduction to Mathematical Cryptography* by Hoffstein, Pipher and Silverman.
 

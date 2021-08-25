@@ -101,7 +101,7 @@ Once we've programmed our cart with the PID algorithm, we still need to choose v
 |:--:|
 | *Wikipedia has a good animation on tuning a PID* |
 
-The above example shows the tuning process for maintaining a setpoint of 1. It shows how increasing \\(K_p\\) can decrease the rise time, but lead to overshooting the setpoint. Increasing \\(K_i\\) will shift the steady-state to the setpoint. Finally, increaseing \\(K_d\\) will provide stability.
+The above example shows the tuning process for maintaining a setpoint of 1. It shows how increasing \\(K_p\\) can decrease the rise time, but lead to overshooting the setpoint. Increasing \\(K_i\\) will shift the steady-state to the setpoint. Finally, increasing \\(K_d\\) will provide stability.
 
 Given our mathematical intuition relating the integral to accumulated error and the derivative to the rate of change of the error, we can come up with these general rules:
 

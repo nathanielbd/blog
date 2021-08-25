@@ -14,7 +14,7 @@ The engine is incredible, but lacks documentation and tutorials. There are a cou
 
 # My ramblings on WSL
 
-Feel free to skip this if you're familiar with WSL, but it's greatly improved my software development experience so I thought I'd share my thoughts and setup if it'd be able to help some people, even if I'm not sponsored to do that.
+Feel free to skip this if you're familiar with WSL, but it's greatly improved my software development experience, so I thought I'd share my thoughts and setup if it'd be able to help some people, even if I'm not sponsored to do that.
 
 WSL stands for "Windows Subsystem for Linux." It allows developers to run a Linux environment on their Windows computer. You can run your favorite distro. It comes with Bash. Perhaps its best perk is giving Windows users access to all the installers and package managers that are so convenient on Linux. 
 
@@ -213,3 +213,9 @@ I'm excited because there are [ongoing efforts to make Manim web-compatible](htt
 My entry for BJC 2020 wasn't the best, but it gave me an excuse to learn Manim and video editing with [DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve/)! The effort to production value ratio is really high for both of these tools.
 
 Now I need an excuse to evaluate some presentation/slidedeck tools for this ratio. Would the winner be [Beamer](https://www.overleaf.com/learn/latex/Beamer), [reveal.js](https://revealjs.com/), or [impress.js](https://impress.js.org/)?
+
+---
+
+*Note: I've since switched to using the [open source community's version of Manim](https://www.manim.community/)!*
+
+---
