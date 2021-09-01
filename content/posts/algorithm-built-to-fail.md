@@ -16,7 +16,7 @@ There's no question that elliptic curves are incredibly important to math and cr
 
 | ![](/bois.png) |
 |:--:|
-| ECC spotted in Wikipedia's security certificate |
+| Elliptic curve cryptography spotted in Wikipedia's security certificate |
 
 It was the key to Andrew Wiles's [famous proof](https://doi.org/10.2307/2118559) of [Fermat's Last Theorem](https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem). It was even used to [fill a void in one of M. C. Escher's artworks](https://im-possible.info/english/articles/escher_printgallery/). 
 
@@ -54,7 +54,7 @@ Roughly speaking, we say that a set has a group structure if we can define an op
 
 then \\(G\\) has group structure.
 
-In the case of elliptic curves, the elements of the set of the points and the operation of choice involves first drawing a line through the points. The third point that the line passes through is denoted as the inverse of the sum. Since elliptic curves are symmetric, the inverse can be inverted by reflecting across the \\(x\\)-axis to recover the sum.
+In the case of elliptic curves, the elements are the set of the points and the operation of choice involves first drawing a line through the points. The third point that the line passes through is denoted as the inverse of the sum. Since elliptic curves are symmetric, the inverse can be inverted by reflecting across the \\(x\\)-axis to recover the sum.
 
 | {{< rawhtml >}} <video controls width='80%'><source src='/PointAddition.mp4'></video> {{< /rawhtml >}}|
 |:--:|
@@ -62,7 +62,7 @@ In the case of elliptic curves, the elements of the set of the points and the op
 
 ---
 
-*Note: If you were confused why we have to invert the third intersection previously, read the following paragraph then consider the above video animating \\(P + Q = R\\). Rearranging results in \\(P + Q - R = \mathcal{O}\\). If we did not invert the third intersection, does this equation still hold?*
+*Note: If you were confused why we have to invert the third intersection previously, read the following paragraph then consider the above video animating \\(P + Q = R\\). Rearranging this results in \\(P + Q - R = \mathcal{O}\\). If we did not invert the third intersection, does this equation still hold?*
 
 ---
 
@@ -95,7 +95,7 @@ and points \\(P = (x_p, y_p)\\) and \\(Q = (x_q, y_q)\\),
 1. If \\(P = \mathcal{O}\\), then \\(P + Q = Q\\)
 2. If \\(Q = \mathcal{O}\\), then \\(p + Q = P\\)
 3. If \\(x_p = x_q\\) and \\(y_p = y_q\\), then \\(P + Q = \mathcal{O}\\)
-4. Let the slope be
+4. Let the slope of the line through \\(P\\) and \\(Q\\) be
 
 $$
 \lambda = \begin{cases}
@@ -106,7 +106,7 @@ $$
 
 The first case is the standard rise-over-run calculation of slope. The second is the slope of the tangent line computed via [implicit differentiation](https://en.wikipedia.org/wiki/Implicit_function#Implicit_differentiation). 
 
-Either way, we have our tangent line
+Either way, we have our line
 
 $$y = \lambda x + \nu,$$
 
@@ -120,7 +120,7 @@ Expanding, rearranging, and grouping terms gives
 
 $$0 = x^3 - \lambda^2 x^2 + (a - 2\lambda \nu)x + (b - \nu^2).$$
 
-Remember, \\((1)\\) was written using both the tangent line equation and the elliptic curve equation, meaning any solution to the previous equation represents an intersection between the two. So if the third intersection is \\(R = (x_r, y_r)\\),
+Remember, \\((1)\\) was written using both the line equation and the elliptic curve equation, meaning any solution to the previous equation represents an intersection between the two. So if the third intersection is \\(R = (x_r, y_r)\\),
 
 $$
 \begin{aligned}
@@ -166,6 +166,8 @@ $$
 
 Addition, subtraction, multiplication, and division.
 
+Shown below is modular addition as well as modular subtraction.
+
 {{< rawhtml >}}
 <table>
   <tr>
@@ -178,11 +180,11 @@ Addition, subtraction, multiplication, and division.
 </table>
 {{< /rawhtml >}}
 
-Multiplication behaves well under modular arithmetic thanks to the useful property
+Multiplication behaves well under modular arithmetic thanks to the useful property that multiplying then \\(\textrm{mod}\\)ing is equivalent to \\(\textrm{mod}\\)ing then multiplying:
 
 $$(a \cdot b) \mod n \equiv (a \mod n)(b \mod n) \mod n.$$
 
-Division is slightly more complicated. But modular division is slightly more complicated. It requires finding a number called the modular multiplicative inverse. In regular arithmetic, if we wanted to divide by 5, we could just multiply by one fifth---its reciprocal, the number to multiply to get 1. Here in modular arithmetic land, we're going to use the extended Euclidean algorithm to find the modular multiplicative inverse and make modular division possible.
+But modular division is slightly more complicated. It requires finding a number called the modular multiplicative inverse. In regular arithmetic, if we wanted to divide by 5, we could just multiply by one fifth---its reciprocal, the number to multiply to get 1. Here in modular arithmetic land, we're going to use the extended Euclidean algorithm to find the modular multiplicative inverse and make modular division possible.
 
 ## Extended Euclidean algorithm
 
@@ -253,9 +255,9 @@ au &\equiv 1 \mod b.
 \end{aligned}
 $$
 
-By definition, \\(u\\) is the modular multiplicative; when multiplied with \\(a\\) it is congruent to \\(1 \mod b\\). In this case, -27 is the modular multiplicative inverse of 21 modulo 71.
+By definition, \\(u\\) is the modular multiplicative inverse of \\(a\\); when multiplied with \\(a\\) it is congruent to \\(1 \mod b\\). In this case, -27 is the modular multiplicative inverse of 21 modulo 71.
 
-Notice that \\(\gcd(a, b)\\) had to be equal to 1 for this to work. Similar to regular arithmetic needing a number to be non-zero for division, modular arithmetic also has conditions for division.
+Notice that \\(\gcd(a, b)\\) had to be equal to 1 for this to work. Similar to regular arithmetic needing a number to be non-zero for division, modular arithmetic also has a condition for division to be defined.
 
 # Recap
 
