@@ -17,4 +17,4 @@ Right now, I am helping make biotech more accessible with [the BioDojo](https://
 - *Nonlinear Dynamics and Chaos with Applications to Physics, Biology, Chemistry, and Engineering* by Steven Strogatz
 - *Quantum Computation and Quantum Information* by Michael Nielsen and Isaac Chuang
 
-Feel free to contact me through [email](mailto:nathanielbd@gmail.com). I am always excited to connect with people!
+Feel free to contact me through [email](mailto:nathanielbd@gmail.com) or [Twitter](https://twitter.com/nbudijono). I am always excited to connect with people!

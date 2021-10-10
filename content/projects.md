@@ -38,7 +38,7 @@ A webapp to help students navigate the notoriously labyrinthine system of underg
 
 ![](https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/954/410/datas/gallery.jpg)
 
-A hackathon submission I made with my partners to Caltech's hackathon. We won 'Best Artificial Intelligence & Computer Vision Hack', 'Best Social Good Hack', and 'Best Hack Using Machine Learning' awarded by Citadel. While we didn't end up working on the projectI past the 36 hours of the hackathon, it did give me a good excuse to play around with the computational chemistry package `rdkit`, webscraping PubMed, Flask web development, and deploying on Google Cloud Platform. I'm no longer hosting the webapp live, but you can read a more comprehensive write-up and view more of images of the website [here](https://devpost.com/software/neurolens).
+A hackathon submission I made with my partners to Caltech's hackathon. We won 'Best Artificial Intelligence & Computer Vision Hack', 'Best Social Good Hack', and 'Best Hack Using Machine Learning' awarded by Citadel. While we didn't end up working on the project, past the 36 hours of the hackathon, it did give me a good excuse to play around with the computational chemistry package `rdkit`, webscraping PubMed, Flask web development, and deploying on Google Cloud Platform. I'm no longer hosting the webapp live, but you can read a more comprehensive write-up and view more of images of the website [here](https://devpost.com/software/neurolens).
 
 ---
 
@@ -56,4 +56,4 @@ I graduated high school!
 
 ![](/ccc.png)
 
-A vanilla JS webgame I made as I was learning JavaScript. *Ready Player One* and its featured classic text-adventure game *ZORK* was fresh in my mind. You can play the game and find my easter eggs [here](https://cold-crisp-catnap.neocities.org/). I have since learned about text parsing and frontend frameworks, so I plan to remake this one.
+A vanilla JavaScript webgame I made as I was learning JavaScript. *Ready Player One* and its featured classic text-adventure game *ZORK* was fresh in my mind. You can play the game and find my easter eggs [here](https://cold-crisp-catnap.neocities.org/). I have since learned about text parsing and frontend frameworks, so I plan to remake this one.

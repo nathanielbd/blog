@@ -75,6 +75,10 @@ googleAnalytics = "UA-168359675-1"
     url = "https://linkedin.com/in/nathanielbd"
 
   [[params.social]]
+    name = "twitter"
+    url = "https://twitter.com/nbudijono"
+
+  [[params.social]]
     name = "email"
     url = "mailto:nathanielbd@gmail.com"
 
