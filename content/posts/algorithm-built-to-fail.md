@@ -8,7 +8,7 @@ tags:
   - programming
 ---
 
-*This is my entry for 3blue1brown's [first summer of math exposition (SoME1)](https://www.3blue1brown.com/blog/some1)*
+*This is my entry for 3blue1brown's [first summer of math exposition (SoME1)](https://www.3blue1brown.com/blog/some1). I'm glad to report it was one of the top 100/1200+ entries and that [Grant Sanderson ranked it as one of his favorite written entries](https://www.3blue1brown.com/blog/some1-results#all-entries)!*
 
 ---
 
@@ -366,6 +366,6 @@ Where is the source code for the animations?
 
 # Acknowledgments
 
-I learned this from *An Introduction to Mathematical Cryptography* by Hoffstein, Pipher and Silverman.
+I learned this from Prof Kai-wen Lan's MATH 5248 course and its textbook *An Introduction to Mathematical Cryptography* by Hoffstein, Pipher and Silverman.
 
 Animations are made with [ManimCE](https://www.manim.community/) and illustrations with [Figma](https://www.figma.com).

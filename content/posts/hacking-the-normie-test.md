@@ -75,6 +75,7 @@ After rounding to the nearest 0.5 for the X weights and to the nearest 0.25 for 
 .gist .blob-interaction-bar .octicon-search > path {fill: #fff}
 .gist .blob-interaction-bar > input {background: #000}
 .gist .blob-interaction-bar {background: #000}
+.gist-meta{display: none;}
 </style> {{< /rawhtml >}}
 
 #### [Normie Neural Networks](https://github.com/nathanielbd/normie-neural-networks)
