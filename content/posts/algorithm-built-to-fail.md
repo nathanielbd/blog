@@ -284,7 +284,7 @@ Consider the title of this post as your final hint.
 
 | ![](/ex623.png) |
 |:--:|
-| *Pencil and paper ready!* Can you find where division fails when we add \\(2P = (43, 126)\\) to \\(3P = (54, 105)\\) in the curve? |
+| *Pencil and paper ready!* Can you find where division fails when we add \\(2P = (43, 126)\\) to \\(3P = (54, 105)\\) in the curve? *Actually try it!* |
 
 The key is to consider the scenario where \\(\gcd(a, b)\\) is not 1. That would mean the extended Euclidean algorithm fails to compute a modular multiplicative inverse. We fail to divide when calculating the slope and it is undefined.
 
@@ -366,6 +366,6 @@ Where is the source code for the animations?
 
 # Acknowledgments
 
-I learned this from Prof Kai-wen Lan's MATH 5248 course and its textbook *An Introduction to Mathematical Cryptography* by Hoffstein, Pipher and Silverman.
+I learned this from Prof Kai-wen Lan's MATH 5248 course at the University of Minnesota and its textbook *An Introduction to Mathematical Cryptography* by Hoffstein, Pipher and Silverman.
 
 Animations are made with [ManimCE](https://www.manim.community/) and illustrations with [Figma](https://www.figma.com).
