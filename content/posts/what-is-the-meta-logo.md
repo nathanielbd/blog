@@ -15,7 +15,7 @@ Today, the Facebook company rebranded itself as Meta. PR aside, what mathematica
 Answer: A [Lissajous curve](https://en.wikipedia.org/wiki/Lissajous_curve) (also called a Bowditch curve), part of a family of parametric equations where the \\(x\\) and \\(y\\) coordinates are sinusoids.
 
 $$
-x = A\sin(at + \delta), \quad y = B\sin(bt).
+x = A\sin(at + \delta), \quad y = B\sin(bt), \quad 0 \leq t \leq 2\pi.
 $$
 
 | {{< rawhtml >}} <iframe src="https://www.desmos.com/calculator/brasrdtssa" width="100%" style="min-height:300px"></iframe> {{< /rawhtml >}} |
@@ -37,7 +37,7 @@ If we consider the Lissajous curve to be an image of a three-dimensional wirefra
 The wireframe has the parameters
 
 $$
-x = A\cos(t), \quad y = A\sin(t), \quad z=B\sin\left(\frac{b}{a}t\right).
+x = A\cos(t), \quad y = A\sin(t), \quad z=B\sin\left(\frac{b}{a}t\right), \quad 0 \leq t \leq 2\pi.
 $$
 
 A good mathematical exercise would be to show that the projection of this onto a plane through the \\(z\\)-axis indeed results in the original Bowditch curve! Given that the company has the augmented reality 'metaverse' in mind, they certainly chose Lissajous curves as a figure that lives simultaneously in [two and three dimensions](https://design.facebook.com/stories/designing-our-new-company-brand-meta/).
