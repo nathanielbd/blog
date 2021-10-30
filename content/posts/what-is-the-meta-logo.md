@@ -32,7 +32,7 @@ If we consider the Lissajous curve to be an image of a three-dimensional wirefra
 
 | {{< rawhtml >}} <video controls width="80%"><source src="/Bowditch3D.mp4"></video> {{< /rawhtml >}} |
 |:--:|
-| Interpretation of \\(\\delta\\) being the angle at which we view a 3D wireframe. Ignoring that closer parts of the wireframe appear larger, this is precisely our original curve in 2D. |
+| Interpretation of \\(\\delta\\) being the angle at which we view a 3D wireframe. Ignoring that closer parts of the wireframe appear larger, this is precisely our original curve in 2D. For an interactive view of the wireframe, see [here](https://christopherchudzicki.github.io/MathBox-Demos/parametric_curves_3D.html?settings=eyJmdW5jdGlvbnMiOnsiYSI6eyJ6IjoiMipzaW4oMip0KSIsInQiOjUuMDQ5OTk5OTk5OTk5OTM3fX0sImNvbnRhaW5lcklkIjoibXktbWF0aC1ib3giLCJjYW1lcmEiOnsicG9zaXRpb24iOlswLjAzLDAuMjIsMS41N119LCJub1pvb20iOnRydWUsImZvY3VzIjoxLjY5NTU4MjQ5NTc4MTMxN30=). |
 
 The wireframe has the parameters
 
