@@ -78,15 +78,9 @@ This site was generated with Hugo and hosted on GitHub Pages.
 
 # Deploying to GitHub Pages
 
-Use [this guide](https://gohugo.io/hosting-and-deployment/hosting-on-github/) as a reference.
+Use [this guide](https://github.com/gohugoio/hugoDocs/blob/9c249cc89573e5865c258f8397515f283c1277e7/content/en/hosting-and-deployment/hosting-on-github.md) as a reference.
 
-- If you are using Linux, Mac, or WSL, you can start [here](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
+- If you are using Linux, Mac, or WSL, you can start [here](https://github.com/gohugoio/hugoDocs/blob/9c249cc89573e5865c258f8397515f283c1277e7/content/en/hosting-and-deployment/hosting-on-github.md)
 - If you are using Windows, instead of running `./deploy.sh` in the final step, you should run `bash -c './deploy.sh'` instead
-
----
-
-*NOTE: * Hugo has transitioned to using GitHub Actions for deployment instead of the bash script referenced in this post. I plan to update this post, but in the meantime, please use the link above.
-
----
 
 This will host your site at `<your-github-username>.github.io`. If you'd like yourself to stand out even more, you could purchase a domain name and [use that name with GitHub Pages](https://docs.github.com/en/github/working-with-github-pages/about-custom-domains-and-github-pages).
