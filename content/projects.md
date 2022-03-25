@@ -6,9 +6,36 @@ draft: false
 
 An incomplete list of some things I've worked on outside of jobs and school that aren't mentioned in the blog. All of the projects have their own GitHub repository of code either on [my profile](https://github.com/nathanielbd) or one of the organizations on my profile.
 
+# 2022
+
+I graduated and started my career as a data scientist!
+
+## [Ouijordle](https://github.com/nathanielbd/whodaman/tree/ouijordle)
+
+![](https://github.com/nathanielbd/whodaman/raw/ouijordle/demo.gif)
+
+Do you want to play multiplayer cooperative Wordle? What about if it was Ouija board themed? Well, I wanted to and made it
+a reality one weekend over spring break. You can play it [here](https://z.umn.edu/ouijordle). Feel free to [tweet](https://twitter.com/nbudijono) your teams' scores at me.
+
 # 2021
 
 I got my first industry research job!
+
+## [RHEEDer](https://github.com/nathanielbd/rheed-viz)
+
+![](https://github.com/nathanielbd/rheed-viz/raw/main/assets/howitworks.png)
+
+Winner of the Acceleration Consortium's hackathon. Reflection high-energy electron diffraction (RHEED) is a popular technique for monitoring the growth of high-quality thin films during molecular beam epitaxy (MBE), a fundamental technique in nanotechnology development. Researchers use tedious, manual tools to analyze RHEED data. Current workflows are slow, non-transferable, and not reproducible. We developed an interface for researchers to upload, organize, automatically preprocess, visualize, and analyze their RHEED
+data in 24 hours.
+
+## [Ludus](https://github.com/nathanielbd/ludus)
+
+![](https://github.com/nathanielbd/ludus/blob/master/paper/submission_version/bruiser_vs_grow.png?raw=true)
+
+Accepted paper at [EAAI 2022](http://cs.gettysburg.edu/~tneller/games/aiagd/). Ludus is a framework for automated balancing of auto
+battler games, such as *Teamfight Tactics*, *Hearthstone Battlegrounds*, and *Dota Underlords*. In this framework, the balancing
+process is an optimization problem where the search space is traversed via simulation. We present the results of experiments applying Ludus to the real-life scenario of releasing units in consecutive sets and using a simulation sampling technique to reduce the cost of 
+optimization.
 
 ---
 

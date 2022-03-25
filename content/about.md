@@ -7,9 +7,9 @@ date: 2020-05-30T11:45:23-05:00
 
 My name is Nathaniel Budijono.
 
-I'm a life-long autodidact currently studying computer science and math at [the University of Minnesota](https://umn.edu). In the future, I hope to be an interdisciplinary computational researcher using computational structural biology or computational chemistry to create technologies for health and the climate.
+I'm a life-long autodidact currently studying undergraduate computer science and math at the University of Minnesota Twin Cities. In the future, I hope to be an interdisciplinary computational researcher using computational structural biology or computational chemistry to create technologies for health or the climate.
 
-In the past, I have worked as a software engineer intern at Rally Health and AI research intern at Smart Information Flow Technologies. I spent time researching genetic interaction networks and sampling algorithms to find developable proteins. You can view my CV [here](/cv.pdf).
+In the past, I have worked as a software engineer intern at Rally Health and AI research intern at Smart Information Flow Technologies. I spent time researching genetic interaction networks, the linguistics of incels, and automated AI balancing of auto battler games. You can view my CV [here](/cv.pdf) and my résumé [here](/resume.pdf).
 
 Aside from learning, I am passionate about STEM communication and advocating for students with unconventional paths through the education system. During the COVID-19 pandemic, I created the websites for the [Society of Asian Scientists and Engineers](https://sase-labs-2021.github.io/) and [App Developers Club](https://adcumn.org) at my university. At both, I led workshops, mentoring groups, and projects to learn machine learning, control systems, and web programming.
 
