@@ -29,7 +29,7 @@ Obfuscation is the process of deliberately making code hard to read by humans. I
 
 A common pattern in obfuscation is renaming variables from their human-readable names to typically 1-2 letter names. However, you cannot change strings without changing the behavior of the program. Therefore, any string found in the source code will be found verbatim in the obfuscated code I find on my device. The tricky part would be finding a string that would lead me directly to a vulnerability...
 
-## CSS Selector Strings and the DOM
+## CSS Selector Strings
 
 My idea for a vulnerability was to trigger an event to reveal the current question's answer before the question had actually ended. I knew the HTML for the page looked like this:
 
@@ -57,8 +57,6 @@ Of course, the first things I searched in the obfuscated code were 'bundle', 'hi
 | Can you see the resemblance? | 
 
 To avoid ruining the puzzle, I'll leave it as an exercise for the reader to [grok](https://www.merriam-webster.com/dictionary/grok) each line of the obfuscated code.
-
-### The BOM
 
 I'd later learn to look for the `window` object in the console several [w3schools pages later](https://www.w3schools.com/js/js_window.asp). I was surprised to find out that all global functions and objects are children of this `window`, including one called `$o` (at least it was called that in the build at the time) that contained the answer to the current question.
 
@@ -93,7 +91,7 @@ setInterval(function(){
 |:---:|
 | Of course, the first thing I tried was changing the interval to 1 second | 
 
-The first code I ever read was obfuscated and the first code I ever wrote was a webgame exploit, but I'd argue that this natural introduction to the DOM, HTML, and CSS gave me a good start as a beginner.
+The first code I ever read was obfuscated, and the first code I ever wrote was a webgame exploit. It's an unusual first exposure to code, but I'd argue that this natural introduction to the DOM, HTML, and CSS gave me a good start as a beginner.
 
 # morsecode.me
 

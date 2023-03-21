@@ -42,7 +42,7 @@ From this, it sounds like DULM looks at the distribution of personality classes 
 
 Due to the last assumption, the first round of web scraping answered the perspective and normie questions randomly while leaving the statistical questions in their default options (except answering male/female/other) and recorded the resulting X- and Y-coordinates. In order to solve for the weights, this first round needed to collect at least 146 samples (25 dynamic questions, 9 Yes-No questions, and the male/female/other question) for the system not to be [underdetermined](https://en.wikipedia.org/wiki/Underdetermined_system).
 
-Also due to the last assumption, the second round of web scraping required a sample for each of the 14400 combinations (2 3-option questions, 3 4-option questions, and 2 5-option questions) of answers to the statistical quesitons. This time, I also recorded the resulting personality class for each sample.
+Also due to the last assumption, the second round of web scraping required a sample for each of the 14400 combinations (2 3-option questions, 3 4-option questions, and 2 5-option questions) of answers to the statistical questions. This time, I also recorded the resulting personality class for each sample.
 
 During my investigation, DULM actually added their own CAPTCHA robot test, which made web scraping a little more difficult.
 

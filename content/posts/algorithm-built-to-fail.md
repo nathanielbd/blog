@@ -49,7 +49,7 @@ What's interesting about elliptic curves for this algorithm is that it has
 Roughly speaking, we say that a set has a group structure if we can define an operation on all its elements which behaves like addition. That is, for a set \\(G\\) and \\(+\\), an operation on \\(G\\), if
 
 - For all \\(a\\), \\(b\\), \\(c\\) in \\(G\\), we have \\((a + b) + c = a + (b + c)\\)
-- There exists \\(0\\) in \\(G\\) such that, for every \\(a\\) in \\(G\\), we have \\(0 + a = a + 0 = a\\). \\(0\\) is known as the *identity element* of \\(G\\)$
+- There exists \\(0\\) in \\(G\\) such that, for every \\(a\\) in \\(G\\), we have \\(0 + a = a + 0 = a\\). \\(0\\) is known as the *identity element* of \\(G\\)
 - For each \\(a\\) in \\(G\\), there exists a unique \\(b\\) in \\(G\\) such that \\(a + b = b + a = 0\\). \\(b = -a\\) is known as the *inverse* of \\(a\\),
 
 then \\(G\\) has group structure.
@@ -93,8 +93,8 @@ $$y^2 = x^3 + ax + b$$
 and points \\(P = (x_p, y_p)\\) and \\(Q = (x_q, y_q)\\),
 
 1. If \\(P = \mathcal{O}\\), then \\(P + Q = Q\\)
-2. If \\(Q = \mathcal{O}\\), then \\(p + Q = P\\)
-3. If \\(x_p = x_q\\) and \\(y_p = y_q\\), then \\(P + Q = \mathcal{O}\\)
+2. If \\(Q = \mathcal{O}\\), then \\(P + Q = P\\)
+3. If \\(x_p = x_q\\) and \\(y_p = - y_q\\), then \\(P + Q = \mathcal{O}\\). We have an undefined slope from dividing by zero, as \\(P\\) and \\(Q\\) have the same \\(x\\)-coordinate, resulting in a vertical line to the identity element at infinity.
 4. Let the slope of the line through \\(P\\) and \\(Q\\) be
 
 $$
@@ -192,7 +192,9 @@ Given integers \\(a\\) and \\(b\\), the extended Euclidean algorithm finds solut
 
 $$\begin{equation}au + bv = \gcd(a, b),\end{equation}$$
 
-where \\(\gcd(a, b)\\) is the greatest common divisor (GCD) of \\(a\\) and \\(b\\), the largest number that divides both numbers of interest evenly. Let's see how it works with an example with \\(a = 21\\) and \\(b = 71\\). First, we compute \\(\gcd(a, b)\\) using the regular, non-extended, Euclidean algorithm. You simply store remainder, divide, and repeat. 
+where \\(\gcd(a, b)\\) is the greatest common divisor (GCD) of \\(a\\) and \\(b\\), the largest number that divides both numbers of interest evenly. \\(u\\) and \\(v\\) are known as the Bézout coefficients of \\(a\\) and \\(b\\). When \\(a\\) and \\(b\\) are coprime (their \\(gcd\\) is 1), these coefficients will give us the modular multiplicative inverse we seek.
+
+Let's see how it works with an example with \\(a = 21\\) and \\(b = 71\\). First, we compute \\(\gcd(a, b)\\) using the regular, non-extended, Euclidean algorithm. You simply store remainder, divide, and repeat. 
 
 $$
 \begin{aligned}
@@ -286,9 +288,13 @@ Consider the title of this post as your final hint.
 |:--:|
 | *Pencil and paper ready!* Can you find where division fails when we add \\(2P = (43, 126)\\) to \\(3P = (54, 105)\\) in the curve? *Actually try it!* |
 
-The key is to consider the scenario where \\(\gcd(a, b)\\) is not 1. That would mean the extended Euclidean algorithm fails to compute a modular multiplicative inverse. We fail to divide when calculating the slope and it is undefined.
+The key is to consider the scenario where \\(\gcd(a, b)\\) is not 1. That would mean the extended Euclidean algorithm fails to compute a modular multiplicative inverse. We fail to divide when calculating the slope and it is undefined. If \\(\gcd(a, b) = c > 1\\), then \\(c\\) is a number we can use to factor \\(a\\) or \\(b\\), since it divides both. Our failure to divide in trying to compute a slope while adding points on the elliptic curve together results in finding a nontrivial factor! So an algorithm to factor can be trying many different curves and many different points until we encounter this scenario.
 
-But if \\(\gcd(a, b) = c > 1\\), then \\(c\\) is a number we can use to factor \\(a\\) or \\(b\\), since it divides both!
+---
+
+*Note: In the above example, division fails when we add \\(2P\\) to \\(3P\\) because \\(5P\\) is equal to the point at infinity \\(\mathcal{O}\\) on the elliptic curve. This is because we try to divide by zero! In the world of modular arithmetic, we've attempted to find the multiplicative inverse of a number that's divisible by the modulus.*
+
+---
 
 | ![](/tangent.png) |
 |:--:|
@@ -336,17 +342,19 @@ I hope you were able to reinvent this algorithm---Lenstra's elliptic curve facto
 
 It's intriguing that the algorithm doesn't just fail, but accomplishes its goal as a result of failing to compute a value. If only math tests were like that!
 
-I plan to write a follow-up post to this one where I implement the algorithm in Python. Along the way, you can expect to learn about the programming conditions known as exceptions and how they can be used to write what might be the most intuitive implementation of the algorithm. Stay tuned and if you want to look ahead, see [the source code](https://github.com/nathanielbd/HPS-crypto).
+--- 
+
+*For part two of this series on Lenstra's algorithm, see [the next post](https://nathanielbd.github.io/posts/python-exceptions-thru-lenstras-algo/) for how Python exceptions can be used to write what might be the most intuitive implementation of the algorithm.*
 
 # Anticipated questions
 
-Why do we expect adding a point to itself repeatedly eventually become the point at infinity?
-- When you have a group with finitely many elements like we do with elliptic curves modulo a number, then computing the multiples of an element by repeatedly adding it to itself will generate new points in the group, including the identity element. If you add one more multiple to the identity element, then we will be back where we started. Thus, mathematicians call the set of elements generated by doing this a cyclic subgroup of the original group. We expect this to happen because of the point's inclusion in a cyclic subgroup:
+Why do we expect adding a point to itself repeatedly eventually become the point at infinity from dividing by zero?
+- You should learn about [Lagrange's theorem](https://en.wikipedia.org/wiki/Lagrange%27s_theorem_(group_theory)) for more details than I will discuss here. When you have a group with finitely many elements like we do with elliptic curves modulo a number, then computing the multiples of an element by repeatedly adding it to itself will generate new points in the group, including the identity element. If you add one more multiple to the identity element, then we will be back where we started. Thus, mathematicians call the set of elements generated by doing this a cyclic subgroup of the original group. We expect this to happen because of the point's inclusion in a cyclic subgroup:
 
 $$H = \\{ \dots \mathcal{O}, P, 2P, \dots \mathcal{O}, \dots \\}$$
 
 Who made this wonderful algorithm?
-- Hendrik Lenstra, a Dutch mathematician. Three of his brothers are also mathematicians, and he actually was the one who [once used ellipctic curves to fill the void in M. C. Escher's *Print Gallery*](https://im-possible.info/english/articles/escher_printgallery/).
+- Hendrik Lenstra, a Dutch mathematician. Three of his brothers are also mathematicians, and he actually was the one who [once used elliptic curves to fill the void in M. C. Escher's *Print Gallery*](https://im-possible.info/english/articles/escher_printgallery/).
 
 | ![](https://tse2.mm.bing.net/th?id=OIP.TzI1bE7iA1tXwlvveHtdOgAAAA&pid=Api) |
 |:--:|

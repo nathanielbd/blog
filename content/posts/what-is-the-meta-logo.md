@@ -26,7 +26,7 @@ After tweaking around or refreshing your high school algebra knowledge, you can 
 
 | {{< rawhtml >}} <video controls width="80%"><source src="/BowditchParametric.mp4"></video> {{< /rawhtml >}} |
 |:--:|
-| From high school trigonometry, you might remember that the value of a sine function corresponds to the height of a unit circle ("SOH" in "SOH-CAH-TOA"). We can use that trick to plot the Bowditch curve. \\(A\\) and \\(B\\) are now radii and \\(\\delta\\) is now an angle offset for their starting positions. \\(a\\) and \\(b\\) control the speeds of rotation of the circles. |
+| From high school trigonometry, you might remember that the value of a sine function corresponds to the height of a triangle inscribed in a unit circle ("SOH" in "SOH-CAH-TOA"). We can use that trick to plot the Bowditch curve. \\(A\\) and \\(B\\) are now radii and \\(\\delta\\) is now an angle offset for their starting positions. \\(a\\) and \\(b\\) control the speeds of rotation of the circles. |
 
 If we consider the Lissajous curve to be an image of a three-dimensional wireframe, then \\(\\delta\\) controls the angle at which we view it.
 

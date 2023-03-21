@@ -10,7 +10,7 @@ tags:
 |:--:|
 | Happy 164th birthday, Aleksandr Lyapunov! |
 
-I recently participated in the first annual [Manim](https://www.manim.community/) math animation engine hackathon! The theme was anniversaries, so I created the above animation to celebrate the 164th anniversary of mathematician Aleksandr Lyapunov's birth. This extended some ideas I presented from [Steven Strogatz's nonlinear dynamics textbook](http://www.stevenstrogatz.com/books/nonlinear-dynamics-and-chaos-with-applications-to-physics-biology-chemistry-and-engineering) at the University of Minnesota's [math directed reading program](https://www-users.math.umn.edu/~mahrud/drp/) symposium.
+I recently participated in the first annual [Manim](https://www.manim.community/) math animation engine hackathon! The theme was anniversaries, so I created the above animation to celebrate the 164th anniversary of mathematician Aleksandr Lyapunov's birth. This extended some ideas I presented from [Steven Strogatz's nonlinear dynamics textbook](http://www.stevenstrogatz.com/books/nonlinear-dynamics-and-chaos-with-applications-to-physics-biology-chemistry-and-engineering) at the University of Minnesota's [math directed reading program](https://www-users.math.umn.edu/~mahrud/drp/) symposium. Here's the [source code](https://github.com/nathanielbd/animating-strogatz) for the animation and visualizations.
 
 # The math
 
@@ -29,7 +29,7 @@ $$
 
 We can't use linearization about the fixed point at the origin to determine its stability; the Jacobian has pure imaginary eigenvalues, so the linearization is not robust to small nonlinear terms.
 
-However, Lyapunov showed that finding a Lyapunov function \\(V\\) which is locally positive definite and has a locally negative definite time derivative implies stability. This is simimlar to an energy function as the trajectories move monotonically down the basis of \\(V\\). Let's try \\(V = x^2 + y^2\\) for the system.
+However, Lyapunov showed that finding a Lyapunov function \\(V\\) which is locally positive definite and has a locally negative definite time derivative implies stability. This is similar to an energy function as the trajectories move monotonically down the basin of \\(V\\). Let's try \\(V = x^2 + y^2\\) for the system.
 
 | ![The chosen Lyapunov function](/ParabImage.png) |
 |:--:|

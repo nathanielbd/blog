@@ -15,7 +15,7 @@ I graduated and started my career as a data scientist!
 ![](https://github.com/nathanielbd/whodaman/raw/ouijordle/demo.gif)
 
 Do you want to play multiplayer cooperative Wordle? What about if it was Ouija board themed? Well, I wanted to and made it
-a reality one weekend over spring break. You can play it [here](https://z.umn.edu/ouijordle). Feel free to [tweet](https://twitter.com/nbudijono) your teams' scores at me.
+a reality one weekend over spring break. You can play it [here](https://ouijordle.herokuapp.com). Feel free to [tweet](https://twitter.com/nbudijono) your teams' scores at me.
 
 # 2021
 
@@ -32,7 +32,7 @@ data in 24 hours.
 
 ![](https://github.com/nathanielbd/ludus/blob/master/paper/submission_version/bruiser_vs_grow.png?raw=true)
 
-Accepted paper at [EAAI 2022](http://cs.gettysburg.edu/~tneller/games/aiagd/). Ludus is a framework for automated balancing of auto
+[Accepted paper](https://ojs.aaai.org/index.php/AAAI/article/view/21550) at [EAAI 2022](https://aaai.org/conference/aaai/aaai-22/eaai-22/). Ludus is a framework for automated balancing of auto
 battler games, such as *Teamfight Tactics*, *Hearthstone Battlegrounds*, and *Dota Underlords*. In this framework, the balancing
 process is an optimization problem where the search space is traversed via simulation. We present the results of experiments applying Ludus to the real-life scenario of releasing units in consecutive sets and using a simulation sampling technique to reduce the cost of 
 optimization.
@@ -43,11 +43,11 @@ optimization.
 
 I turned 18 years old!
 
-## [WhoDaMan](https://github.com/ADC-UMN/multiplayer-trivia-game)
+## [Quizbuzz, formerly known as WhoDaMan](https://github.com/ADC-UMN/multiplayer-trivia-game)
 
 ![](https://github.com/nathanielbd/whodaman/raw/master/buzz.gif)
 
-A multiplayer trivia game named after [a classmate's quote on Jeopardy!](https://www.twincities.com/2020/04/17/umn-sophomore-nibir-sarma-wins-jeopardy-college-championship-claiming-100000-grand-prize/). I created the [playable webapp](https://nathanielbd-whodaman.zeet.app/), [a tutorial](https://github.com/ADC-UMN/multiplayer-trivia-game), and [open-source community version](https://github.com/ADC-UMN/whodaman-ce) where anyone can contribute to learn by doing! Playing the role of Alex Trebek at App Developers Club Fall Kickoff brought me great joy.
+A multiplayer trivia game formerly named after [a classmate's quote on Jeopardy!](https://www.twincities.com/2020/04/17/umn-sophomore-nibir-sarma-wins-jeopardy-college-championship-claiming-100000-grand-prize/). I created the [playable webapp](https://quizbuzz.herokuapp.com), [a tutorial](https://github.com/ADC-UMN/multiplayer-trivia-game), and [open-source community version](https://github.com/ADC-UMN/whodaman-ce) where anyone can contribute to learn by doing! Playing the role of Alex Trebek at App Developers Club Fall Kickoff brought me great joy.
 
 ## [MacZero](https://github.com/nathanielbd/MacZero)
 
